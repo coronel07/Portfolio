@@ -14,10 +14,10 @@
         
         <!-- Sección de botones de ajuste -->
         <div class="settings-buttons">
-            <button id="theme-toggle" onclick="toggleTheme()">Cambiar Tema</button>
-            <button id="language-toggle" onclick="toggleLanguage()">Cambiar Idioma</button>
+            <button id="theme-toggle" onclick="toggleTheme()">Tema</button>
+            <button id="language-toggle" onclick="toggleLanguage()">Idioma</button>
             <button id="sound-toggle" onclick="toggleSound()">Sonido</button>
-            <button id="session-toggle" onclick="toggleSession()">Iniciar/Cerrar Sesión</button>
+            <a href="{{ url_for('login') }}" id="session-toggle" class="button">Sesión</a>
         </div>
         
     </div>
