@@ -36,6 +36,15 @@ class LoginForm(FlaskForm):
     password = PasswordField('Contraseña', validators=[DataRequired()])
     submit = SubmitField('Iniciar Sesión')
 
+# Decorador para verificar si el usuario está autenticado
+def login_required(f):
+    def wrap(*args, **kwargs):
+        if 'username' not in session:
+            flash('Inicia sesión para acceder.', 'warning')
+            return redirect(url_for('login'))
+        return f(*args, **kwargs)
+    return wrap
+
 # Ruta para manejar el inicio de sesión
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -56,39 +65,40 @@ def logout():
     flash('Sesión cerrada.', 'info')
     return redirect(url_for('login'))
 
-
-# Ruta de inicio (restringida a usuarios autenticados)
+# Rutas restringidas
 @app.route('/')
 def inicio():
-    if 'username' not in session:
-        flash('Inicia sesión para acceder.', 'warning')
-        return redirect(url_for('login'))
-    return render_template('base.html')
+    is_authenticated = 'user_id' in session  # Ajusta según cómo guardes el estado de autenticación
+    return render_template('base.html', is_authenticated=is_authenticated)
 
-# Rutas adicionales
+@app.route('/header')
+def header():
+    return render_template('header.html')
+
 @app.route('/about')
 def about():
     return render_template('about.html')
 
-@app.route('/projects')
-def projects():
-    return render_template('projects.html')
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
 
 @app.route('/skills')
 def skills():
     return render_template('skills.html')
 
-@app.route('/settings')
-def settings():
-    return render_template('settings.html')
+@app.route('/projects')
+def projects():
+    return render_template('projects.html')
 
 @app.route('/logo')
 def logo():
     return render_template('logo.html')
 
-@app.route('/contact')
-def contact():
-    return render_template('contact.html')
+@app.route('/settings')
+def settings():
+    return render_template('settings.html')
+
 
 # Creación de tablas en la base de datos si no existen
 with app.app_context():
