@@ -34,20 +34,30 @@ body.light-theme .container>div {
     border: 1px solid #3a3a3a;
     border-radius: 8px;
     padding: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    /* Iluminación suave debajo */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1), 0 8px 20px rgba(255, 0, 21, 0.3);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container>div:hover {
+    /* Realzar el efecto en hover */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2), 0 10px 30px rgba(255, 0, 55, 0.5);
 }
 
 /* Cuadrícula con proporciones ajustadas */
 .container {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr 0.3fr;
-    grid-template-rows: 0.6fr 0fr 0.3fr 0.3fr 0.7fr 1.3fr ;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr 1fr 1fr 0.3fr;
+    grid-template-rows: 0.6fr 0fr 0.3fr 0.3fr 0.7fr 1.3fr;
     grid-template-areas:
-        "header header header  about about about about settings"
+        "header header header about about about about settings"
         "skills contact contact about about about about settings"
         "skills contact contact about about about about settings"
         "skills projects projects projects projects projects projects projects"
@@ -124,3 +134,7 @@ body.light-theme .container>div {
             "logo";
     }
 }
+
+
+
+
