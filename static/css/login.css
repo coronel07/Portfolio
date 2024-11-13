@@ -1,0 +1,99 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0d0d0d;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    margin: 0;
+    padding: 30px;
+}
+
+.login-container {
+    background-color: #1a1a1a;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.flashes {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.flashes li {
+    background-color: #d9534f;
+    color: #ffffff;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    color: #ffffff;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    background-color: #333333;
+    border: none;
+    color: #ffffff;
+    border-radius: 6px;
+    outline: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+    color: #bbbbbb;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    background-color: #444444;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+/* Estilo mejorado para el botón de iniciar sesión */
+button {
+    background: linear-gradient(90deg, hsl(0, 79%, 48%), hsl(0, 83%, 53%));
+    color: #ffffff;
+    padding: 14px 22px;
+    border: none;
+    border-radius: 50px; /* Bordes redondeados */
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    text-transform: uppercase; /* Mayúsculas para mejor visibilidad */
+}
+
+button:hover {
+    transform: translateY(-5px) scale(1.02); /* Efecto de elevación y ligero aumento */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(90deg, hsl(0, 85%, 58%), hsl(0, 89%, 63%));
+}
+
+button:active {
+    transform: translateY(2px); /* Efecto al hacer clic */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
