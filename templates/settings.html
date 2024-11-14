@@ -3,5 +3,13 @@
     <button id="theme-toggle" onclick="toggleTheme()">🌞</button>
     <button id="language-toggle" onclick="toggleLanguage()">🌐</button>
     <button id="sound-toggle" onclick="toggleSound()">🔊</button>
-    <button id="session-toggle" onclick="toggleSession()">🔒</button>
+    <button id="session-toggle" onclick="redirectToLogin()">🔒</button>
 </div>
+
+
+<script>
+    function redirectToLogin() {
+    window.location.href = "http://127.0.0.1:5000/login"; 
+}
+
+</script>
