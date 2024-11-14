@@ -14,26 +14,27 @@
         <h3>Opciones de desarrollador</h3>
         {% endif %}
         
+        <!-- Contenido de cada sección sin iframe -->
         <div class="header">
-            <iframe src="/header" frameborder="0" class="content-frame"></iframe>
+            {% include 'header.html' %}
         </div>
         <div class="about">
-            <iframe src="/about" frameborder="0" class="content-frame"></iframe>
+            {% include 'about.html' %}
         </div>
         <div class="contact">
-            <iframe src="/contact" frameborder="0" class="content-frame"></iframe>
+            {% include 'contact.html' %}
         </div>
         <div class="skills">
-            <iframe src="/skills" frameborder="0" class="content-frame"></iframe>
+            {% include 'skills.html' %}
         </div>
         <div class="projects">
-            <iframe src="/projects" frameborder="0" class="content-frame"></iframe>
+            {% include 'projects.html' %}
         </div>
         <div class="logo">
-            <iframe src="/logo" frameborder="0" class="content-frame"></iframe>
+            {% include 'logo.html' %}
         </div>
         <div class="settings">
-            <iframe src="/settings" frameborder="0" class="content-frame"></iframe>
+            {% include 'settings.html' %}
         </div>
     </div>
 
@@ -54,3 +55,4 @@
 </body>
 
 </html>
+   
