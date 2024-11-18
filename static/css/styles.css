@@ -58,8 +58,8 @@
     /* Cuadrícula con proporciones ajustadas */
     .container {
         display: grid;
-        grid-template-columns: 3.2fr 2fr 2fr 2fr 2fr 2fr 2fr 0.6fr;
-        grid-template-rows: 1.4fr 0fr 1fr 1fr 1.8fr 3fr;
+        grid-template-columns: 3fr 1.8fr 1.8fr 1.8fr 1.8fr 1.8fr 1.8fr 0.4fr;
+        grid-template-rows: 1.2fr 0fr 0.8fr 0.8fr 1.6fr 2.8fr;
         grid-template-areas:
             "header header header about about about about settings"
             "skills contact contact about about about about settings"
@@ -78,10 +78,6 @@
         grid-area: header;
     }
 
-    .settings {
-        grid-area: settings;
-    }
-
     .about {
         grid-area: about;
     }
@@ -98,9 +94,25 @@
         grid-area: projects;
     }
 
+    /* Asignación de áreas */
+    .settings {
+        grid-area: settings;
+        background-color: #ff0000;
+        /* Rojizo */
+    }
+
     .logo {
         grid-area: logo;
+        background-color: #ff0000;
+        /* Rojizo */
     }
+
+    .settings, .logo {
+        background-color: #ff0000 !important; /* Rojizo */
+        border: 2px solid #cc0000; /* Opcional */
+        color: white; /* Para asegurar que el texto sea visible */
+    }
+    
 
     /* Estilos específicos de los iframes */
     .content-frame {
@@ -155,44 +167,95 @@
 
 
     /* SKILLS */
-
-    /* Contenedor de habilidades */
+/* Contenedor principal de habilidades */
 .skills-content {
     display: flex;
-    flex-direction: column; /* Organiza los elementos de manera vertical */
-    align-items: flex-start; /* Alinea los elementos a la izquierda */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
 }
 
 /* Título de habilidades */
 .skills-content h2 {
-    margin-bottom: 20px; /* Espacio debajo del título */
+    margin-bottom: 15px;
     font-size: 28px;
-    color: #ffffff;
     font-weight: 600;
+    color: #ffffff;
 }
 
-/* Grid para los iconos */
+/* Contenedor de íconos */
 .skills-content .icons-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 iconos por fila */
-    gap: 10px; /* Espacio entre los iconos */
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+    /* Diseño responsive */
+    gap: 15px;
+    justify-items: center;
+    align-items: center;
     width: 100%;
-    max-width: 900px; /* Limita el ancho máximo */
 }
 
-/* Estilos para los iconos */
+/* Íconos individuales */
 .skills-content .icon {
-    width: 40px; /* Tamaño más pequeño */
-    height: 40px; /* Ajustado a 40px de altura para ser proporcional */
+    width: 30px;
+    height: 30px;
     transition: transform 0.3s ease, filter 0.3s ease;
-    filter: grayscale(60%); /* Iconos en escala de grises por defecto */
+    filter: grayscale(60%);
 }
 
+/* Efecto hover en los íconos */
 .skills-content .icon:hover {
-    transform: scale(1.2); /* Agranda el icono cuando se pasa el mouse */
-    filter: grayscale(0%); /* Devuelve al color original al hacer hover */
+    transform: scale(1.2);
+    /* Aumenta el tamaño */
+    filter: grayscale(0%);
+    /* Quita escala de grises */
 }
+
+/* Contenedor para los iconos con círculo */
+.icon-circle {
+    width: 40px;
+    /* Ajusta el tamaño del círculo */
+    height: 40px;
+    border-radius: 50%;
+    /* Hace el círculo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+    /* Fallback color */
+    position: relative;
+}
+
+/* Íconos dentro del círculo */
+.icon {
+    width: 40px;
+    /* Ajusta el tamaño de los íconos */
+    height: 40px;
+}
+
+/* Mostrar el nombre cuando se pase el mouse */
+.icon-circle::after {
+    content: attr(data-name);
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 0, 0, 0.8); /* Fondo rojizo */
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    display: none;
+    /* Inicialmente oculto */
+    z-index: 10;
+}
+
+.icon-circle:hover::after {
+    display: block;
+    /* Mostrar el nombre al pasar el mouse */
+}
+
+
 
 
 
@@ -202,28 +265,393 @@
 .contact-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     padding: 20px;
+    grid-area: contact; /* Asegura que se ubique en el área definida en el grid */
 }
 
 /* Grid para los iconos */
 .contact-container .icons-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 iconos por fila */
-    gap: 10px; /* Espacio entre los iconos */
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 iconos por fila por defecto */
+    gap: 10px;
+    /* Espacio entre los iconos */
     width: 100%;
-    max-width: 400px; /* Limita el ancho máximo */
+    max-width: 400px;
+    /* Limita el ancho máximo */
 }
 
 /* Estilos para los iconos */
 .contact-container .icon {
-    width: 30px; /* Tamaño uniforme para todos los iconos */
+    width: 30px;
+    /* Tamaño uniforme para todos los iconos */
     height: 30px;
     transition: transform 0.3s ease, filter 0.3s ease;
-    filter: grayscale(60%); /* Iconos en escala de grises por defecto */
+    filter: grayscale(60%);
+    /* Iconos en escala de grises por defecto */
 }
 
 .contact-container .icon:hover {
-    transform: scale(1.2); /* Agranda el icono cuando se pasa el mouse */
-    filter: grayscale(0%); /* Devuelve al color original al hacer hover */
+    transform: scale(1.2);
+    /* Agranda el icono cuando se pasa el mouse */
+    filter: grayscale(0%);
+    /* Devuelve al color original al hacer hover */
 }
+
+/* Adaptabilidad para pantallas medianas */
+@media (max-width: 1024px) {
+    .contact-container .icons-grid {
+        grid-template-columns: 1fr;
+        /* Una sola columna para móviles */
+        gap: 20px;
+        /* Espacio mayor entre iconos */
+    }
+    .contact-container {
+        align-items: center;
+        padding: 10px;
+    }
+}
+
+/* Adaptabilidad para móviles */
+@media (max-width: 768px) {
+    .contact-container .icons-grid {
+        grid-template-columns: repeat(3, 1fr);
+        /* Reduce a 2 iconos por fila */
+        gap: 15px;
+        /* Aumenta el espacio entre iconos para mejor visualización */
+    }
+}
+
+
+
+
+
+
+
+
+    /* LOGO */
+    /* Contenedor de la imagen del logo */
+    .logo-grid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    /* Estilos para la imagen del logo */
+    .logo-image {
+        max-width: 100%;
+        /* Ajusta el ancho máximo de la imagen al 80% del contenedor */
+        max-height: 100%;
+        /* Ajusta la altura máxima de la imagen al 80% del contenedor */
+        object-fit: contain;
+        /* Escala la imagen proporcionalmente dentro del contenedor */
+        transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    /* Efecto hover para el logo */
+    .logo-image:hover {
+        transform: scale(1.3);
+        /* Agranda ligeramente el logo al pasar el mouse */
+        filter: brightness(1.2);
+        /* Aumenta el brillo del logo al hacer hover */
+    }
+
+
+
+
+
+
+
+
+    /* PROYECTOS */
+
+    /* Título del carrusel */
+    .projects-title {
+        font-size: 36px;
+        font-weight: bold;
+        color: #ffffff;
+        margin-bottom: 20px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 10;
+    }
+
+    /* Carrusel */
+    .carousel {
+        position: relative;
+        display: flex;
+        align-items: center;
+        max-width: 100%;
+        overflow: hidden;
+        margin-top: 40px;
+        padding: 0 20px;
+        /* Espaciado en los extremos para móviles */
+    }
+
+    /* Pista del carrusel */
+    .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        gap: 20px;
+    }
+
+    :root {
+        --color-carrusel-dark: #2c2c2c;
+        /* Color de fondo oscuro */
+        --color-carrusel-light: #d4d4d4;
+        /* Color de fondo claro */
+        --sombra-dark: rgba(0, 0, 0, 0.5);
+        /* Sombra para tema oscuro */
+        --sombra-light: rgba(0, 0, 0, 0.1);
+        /* Sombra para tema claro */
+        --border-radius: 12px;
+        /* Radio de borde */
+    }
+
+    /* Item del carrusel */
+    .carousel-item {
+        min-width: 400px;
+        min-height: 200px;
+        background-color: var(--color-carrusel-dark);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: 0 4px 10px var(--sombra-dark);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Cambiar a tema claro */
+    body.light-theme .carousel-item {
+        background-color: var(--color-carrusel-light);
+        box-shadow: 0 4px 10px var(--sombra-light);
+    }
+
+
+    /* Efecto hover para agrandar la tarjeta */
+    .carousel-item:hover {
+        transform: scale(1.05);
+        /* Agranda la tarjeta */
+        box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+        /* Sombra más pronunciada */
+    }
+
+    /* Imagen del proyecto */
+    .project-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-bottom: 4px solid #ff0000;
+    }
+
+    /* Nombre del proyecto */
+    .project-name {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 10px;
+        color: #ffffff;
+        text-align: center;
+    }
+
+    /* Descripción del proyecto */
+    .project-description {
+        font-size: 16px;
+        margin: 0 10px 10px;
+        color: #cccccc;
+        text-align: center;
+    }
+
+    /* Botón del carrusel */
+    .carousel-btn {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #ffffff;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Botones del carrusel */
+    .prev-btn {
+        left: 10px;
+        /* Asegúrate de que no quede fuera de la pantalla */
+    }
+
+    .next-btn {
+        right: 10px;
+        /* Asegúrate de que no quede fuera de la pantalla */
+    }
+
+    /* Adaptabilidad para móviles */
+    @media (max-width: 768px) {
+        .carousel-btn {
+            width: 35px;
+            height: 35px;
+            font-size: 20px;
+        }
+
+        .prev-btn {
+            left: 5px;
+            /* Ajusta la posición en móviles */
+        }
+
+        .next-btn {
+            right: 5px;
+            /* Ajusta la posición en móviles */
+        }
+    }
+
+    /* Asegurar que las flechas estén siempre visibles */
+    .carousel {
+        position: relative;
+        overflow: visible;
+        /* Permite que las flechas se muestren fuera de los límites del contenedor */
+    }
+
+
+
+
+
+
+
+
+
+    /*  HEADER  */
+    /* Contenedor principal */
+    .header-content {
+        display: flex;
+        /* Organiza el contenido en filas o columnas */
+        justify-content: space-between;
+        /* Coloca los elementos en lados opuestos */
+        align-items: center;
+        /* Centra verticalmente */
+        padding: 0 0%;
+        /* Espaciado interno en los lados izquierdo y derecho */
+        gap: 5%;
+        /* Deja espacio entre las dos secciones */
+        color: white;
+        /* Texto blanco */
+        position: relative;
+    }
+
+    /* Estilo de la sección izquierda */
+    .header-left h2 {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 0;
+        margin-left: -10px;
+        /* Mueve más hacia la izquierda */
+        letter-spacing: 1px;
+        text-align: left;
+    }
+
+    .header-left h4 {
+        font-size: 15px;
+        margin-left: -10px;
+
+        color: #aaa;
+        /* Gris para un contraste sutil */
+    }
+
+
+    /* Estilo del título principal (derecha) */
+    .header-right h1 {
+        font-size: 50px;
+        font-weight: bold;
+        background: linear-gradient(90deg, #ff0000, #ff6347);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: right;
+        margin: 0;
+    }
+
+
+
+
+
+    /* TEMA */
+
+
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    a {
+        color: inherit;
+        /* Los colores serán heredados del tema */
+    }
+
+    /* Estilo para el tema claro */
+    body.light-theme {
+        background-color: #ffffff;
+        color: #0d0d0d;
+    }
+
+    body.light-theme h1,
+    body.light-theme h2,
+    body.light-theme h3,
+    body.light-theme h4,
+    body.light-theme h5,
+    body.light-theme h6,
+    body.light-theme p {
+        color: #333333;
+        /* Color de texto oscuro para el tema claro */
+    }
+
+    /* Estilos adicionales para otros elementos (si es necesario) */
+    body.light-theme a {
+        color: #0066cc;
+        /* Enlaces en color azul para el tema claro */
+    }
+
+    body.light-theme a:hover {
+        color: #004d99;
+        /* Enlaces en color azul oscuro cuando se pasa el ratón */
+    }
+
+
+
+
+
+    /* ABOUT */
+
+
+    /* Asegura que el contenedor tome todo el alto de la pantalla */
+    .about-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        /* Alinea a la izquierda */
+        padding: 0px;
+    }
+
+    h1 {
+        margin: 0;
+        /* Elimina margen por defecto */
+        font-size: 2rem;
+        /* Tamaño del título */
+        font-weight: bold;
+    }
+
+    .about-content {
+        margin-top: 10px;
+        /* Separación entre el h1 y el contenido */
+        font-size: 1.1rem;
+    }

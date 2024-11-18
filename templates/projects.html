@@ -1,0 +1,62 @@
+<h1 class="projects-title">Proyectos</h1>
+<div class="carousel">
+    <button class="carousel-btn prev-btn">&#8249;</button>
+    <div class="carousel-track">
+        <!-- Items del carrusel -->
+        <div class="carousel-item">
+            <img class="project-image" src="image1.jpg" alt="Proyecto 1">
+            <p class="project-name">Proyecto 1</p>
+            <p class="project-description">Descripción del proyecto 1</p>
+        </div>
+        <div class="carousel-item">
+            <img class="project-image" src="image2.jpg" alt="Proyecto 2">
+            <p class="project-name">Proyecto 2</p>
+            <p class="project-description">Descripción del proyecto 2</p>
+        </div>
+        <div class="carousel-item">
+            <img class="project-image" src="image3.jpg" alt="Proyecto 3">
+            <p class="project-name">Proyecto 3</p>
+            <p class="project-description">Descripción del proyecto 3</p>
+        </div>
+        <div class="carousel-item">
+            <img class="project-image" src="image4.jpg" alt="Proyecto 4">
+            <p class="project-name">Proyecto 4</p>
+            <p class="project-description">Descripción del proyecto 4</p>
+        </div>
+        <div class="carousel-item">
+            <img class="project-image" src="image5.jpg" alt="Proyecto 5">
+            <p class="project-name">Proyecto 5</p>
+            <p class="project-description">Descripción del proyecto 5</p>
+        </div>
+    </div>
+    <button class="carousel-btn next-btn">&#8250;</button>
+</div>
+
+<script>
+    const prevBtn = document.querySelector(".prev-btn");
+    const nextBtn = document.querySelector(".next-btn");
+    const carouselTrack = document.querySelector(".carousel-track");
+    const items = document.querySelectorAll(".carousel-item");
+
+    let currentIndex = 0;
+
+    // Función para mover el carrusel
+    function moveCarousel(index) {
+        const itemWidth = items[0].getBoundingClientRect().width;
+        carouselTrack.style.transform = `translateX(${-index * (itemWidth + 20)}px)`;
+    }
+
+    // Botón anterior
+    prevBtn.addEventListener("click", () => {
+        // Mueve hacia el anterior, si estamos en el primer item, vuelve al último
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : items.length - 1;
+        moveCarousel(currentIndex);
+    });
+
+    // Botón siguiente
+    nextBtn.addEventListener("click", () => {
+        // Mueve hacia el siguiente, si estamos en el último item, vuelve al primero
+        currentIndex = (currentIndex + 1) % items.length; // Esto garantiza el ciclo
+        moveCarousel(currentIndex);
+    });
+</script>

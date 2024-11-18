@@ -1,15 +1,106 @@
 <!-- Sección de botones de ajuste -->
 <div class="settings-content">
-    <button id="theme-toggle" onclick="toggleTheme()">🌞</button>
-    <button id="language-toggle" onclick="toggleLanguage()">🌐</button>
-    <button id="sound-toggle" onclick="toggleSound()">🔊</button>
-    <button id="session-toggle" onclick="redirectToLogin()">🔒</button>
+    <!-- Botón de tema (light/dark mode) -->
+    <button id="theme-toggle" onclick="toggleTheme()">
+        <img src="/static/settings/theme.png" alt="Theme Icon" id="theme-icon">
+    </button>
+
+    <!-- Botón de idioma -->
+    <button id="language-toggle" onclick="toggleLanguage()">
+        <img src="/static/settings/language.svg" alt="Language Icon">
+    </button>
+
+    <!-- Botón de sonido -->
+    <button id="sound-toggle" onclick="toggleSound()">
+        <img src="/static/settings/sound-on.svg" alt="Sound Icon" id="sound-icon">
+    </button>
+
+    <!-- Botón de sesión -->
+    <button id="session-toggle" onclick="redirectToLogin()" onmouseover="hoverStar(true)" onmouseout="hoverStar(false)">
+        <img src="/static/settings/star.svg" alt="Star Icon" id="session-icon">
+    </button>
 </div>
 
+<!-- Scripts -->
+<!-- Scripts -->
+<script type="text/javascript">
+    // Variable global para controlar si el sonido está activado
+    let isSoundOn = true;
 
-<script>
+    // Función para alternar sonido
+    function toggleSound() {
+        const soundIcon = document.getElementById('sound-icon');
+        isSoundOn = soundIcon.src.includes('sound-on');
+
+        // Cambiar entre los íconos de sonido activado/desactivado
+        soundIcon.src = isSoundOn ? '/static/settings/sound-off.svg' : '/static/settings/sound-on.svg';
+
+        // Actualizar el estado de sonido
+        isSoundOn = !isSoundOn;
+    }
+
+    // Reproducir sonido al hacer clic
+    function playClickSound() {
+        if (isSoundOn) {
+            const audio = new Audio('/static/sounds/bite.mp3');
+            audio.play();
+        }
+    }
+
+    // Agregar eventos globales para capturar los clics
+    document.addEventListener('click', playClickSound);
+
+    // Función para alternar idioma
+    function toggleLanguage() {
+        const currentLang = document.documentElement.lang || 'es';
+
+        if (currentLang === 'es') {
+            document.documentElement.lang = 'en';
+        } else {
+            document.documentElement.lang = 'es';
+        }
+    }
+
+    // Función para redirigir al login
     function redirectToLogin() {
-    window.location.href = "http://127.0.0.1:5000/login"; 
-}
+        window.location.href = "http://127.0.0.1:5000/login";
+    }
 
+    // Efecto hover para la estrella
+    function hoverStar(isHovered) {
+        const sessionIcon = document.getElementById('session-icon');
+        if (isHovered) {
+            sessionIcon.style.transform = 'scale(1.2)'; // Aumenta el tamaño
+            sessionIcon.style.transition = 'transform 0.2s ease-in-out';
+        } else {
+            sessionIcon.style.transform = 'scale(1)';
+        }
+    }
 </script>
+
+
+<!-- Estilo adicional para botones -->
+<style>
+    .settings-content button {
+        border: none;
+        background: none;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .settings-content button img {
+        width: 32px;
+        height: 32px;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .settings-content button:hover img {
+        transform: scale(1.2);
+    }
+
+    /* Estilos para el modo oscuro */
+    .dark-mode {
+        background-color: #121212;
+        color: white;
+    }
+</style>
