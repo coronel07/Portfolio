@@ -63,7 +63,7 @@
 
     // Función para redirigir al login
     function redirectToLogin() {
-        window.location.href = "http://127.0.0.1:5000/login";
+        window.location.href = "{{ url_for('login') }}"; // Genera la URL dinámicamente
     }
 
     // Efecto hover para la estrella

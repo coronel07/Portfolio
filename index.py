@@ -99,6 +99,9 @@ def logo():
 def settings():
     return render_template('settings.html')
 
+@app.route('/information')
+def information():
+    return render_template('information.html')
 
 # Creación de tablas en la base de datos si no existen
 with app.app_context():

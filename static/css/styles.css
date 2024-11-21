@@ -633,25 +633,46 @@
     /* ABOUT */
 
 
-    /* Asegura que el contenedor tome todo el alto de la pantalla */
-    .about-container {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        /* Alinea a la izquierda */
-        padding: 0px;
-    }
+/* ABOUT */
 
-    h1 {
-        margin: 0;
-        /* Elimina margen por defecto */
-        font-size: 2rem;
-        /* Tamaño del título */
-        font-weight: bold;
-    }
+/* Contenedor principal */
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: right; /* Centra los elementos horizontalmente */
+    padding: 0px;
+}
 
-    .about-content {
-        margin-top: 10px;
-        /* Separación entre el h1 y el contenido */
-        font-size: 1.1rem;
-    }
+/* Título */
+h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Contenido */
+.about-content {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    text-align: center; /* Centra el texto */
+}
+
+/* Botón Saber Más */
+.btn-more {
+    display: inline-block;
+    margin-top: 15px; /* Espaciado superior */
+    padding: 10px 20px; /* Tamaño del botón */
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none; /* Sin subrayado */
+    color: white; /* Texto blanco */
+    background-color: #cc0000; /* Rojo intenso */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease;
+    text-align: center; /* Centra el texto dentro del botón */
+}
+
+/* Efecto hover */
+.btn-more:hover {
+    background-color: #a30000; /* Rojo más oscuro */
+}

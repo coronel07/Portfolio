@@ -1,0 +1,126 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #cc0000; /* Rojo oscuro */
+}
+
+/* Contenedor principal */
+.more-about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Secciones */
+section {
+    margin-bottom: 30px;
+}
+
+/* Introducción */
+.about-section p {
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+/* Certificados */
+.certificates-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.certificate-item {
+    text-align: center;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.certificate-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Proyectos */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background-color: #333;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.project-card-content {
+    padding: 15px;
+}
+
+.project-card h3 {
+    margin: 0 0 10px;
+    color: #cc0000;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.btn-details {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    color: white;
+    background-color: #cc0000;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.btn-details:hover {
+    background-color: #a30000;
+}
+
+/* Botón volver */
+.btn-back {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: white;
+    background-color: #cc0000;
+    text-decoration: none;
+    border-radius: 5px;
+    width: 150px;
+}
+
+.btn-back:hover {
+    background-color: #a30000;
+}

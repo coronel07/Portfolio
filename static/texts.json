@@ -1,0 +1,182 @@
+{
+    "site": {
+      "header": {
+        "greeting": {
+          "es": "HOLA, SOY",
+          "en": "HELLO, I AM"
+        },
+        "role": {
+          "es": "DESARROLLADOR WEB",
+          "en": "WEB DEVELOPER"
+        },
+        "name": "NICOLAS"
+      },
+      "about": {
+        "title": {
+          "es": "Sobre mí",
+          "en": "About Me"
+        },
+        "description": {
+          "es": "Soy un desarrollador web full stack en proceso de aprendizaje con 2 años de experiencia, durante los cuales he trabajado en diversos proyectos personales y colegiales. Desarrollo aplicaciones web utilizando tecnologías como React, JavaScript, Python, entre otras. Hablo español y catalán, y, lo más importante, me apasiona el fútbol.",
+          "en": "I am a full-stack web developer in the process of learning with 2 years of experience, during which I have worked on various personal and school projects. I develop web applications using technologies like React, JavaScript, Python, among others. I speak Spanish and Catalan, and most importantly, I am passionate about football."
+        },
+        "button_text": {
+          "es": "Saber más",
+          "en": "Learn More"
+        },
+        "button_link": "/information"
+      },
+      "more_about": {
+        "title": {
+          "es": "Más sobre mí",
+          "en": "More About Me"
+        },
+        "description": {
+          "es": "Hola, gracias por querer saber más sobre mí. Soy un desarrollador web apasionado por aprender constantemente y mejorar mis habilidades. Además, disfruto trabajar en equipo, asumir roles de liderazgo y aportar soluciones innovadoras. Cuando no estoy programando, me encanta jugar fútbol y pasar tiempo con mis amigos y familia.",
+          "en": "Hello, thank you for wanting to know more about me. I am a web developer passionate about continuously learning and improving my skills. I also enjoy working in teams, taking leadership roles, and providing innovative solutions. When I am not programming, I love playing football and spending time with my friends and family."
+        },
+        "certificates": [
+          {
+            "name": {
+              "es": "Proyectos de Robótica I",
+              "en": "Robotics Projects I"
+            },
+            "image": "/static/logo/certificados.jpg"
+          },
+          {
+            "name": {
+              "es": "Proyectos de Robótica II",
+              "en": "Robotics Projects II"
+            },
+            "image": "/static/logo/certificados.jpg"
+          },
+          {
+            "name": {
+              "es": "Participación en ONIET",
+              "en": "Participation in ONIET"
+            },
+            "image": "/static/logo/certificados.jpg"
+          },
+          {
+            "name": {
+              "es": "Capacitación de Mercado Libre",
+              "en": "Mercado Libre Training"
+            },
+            "image": "/static/logo/certificados.jpg"
+          },
+          {
+            "name": {
+              "es": "Junior Achievement",
+              "en": "Junior Achievement"
+            },
+            "image": "/static/logo/certificados.jpg"
+          }
+        ],
+        "back_button_text": {
+          "es": "Volver al inicio",
+          "en": "Back to Home"
+        },
+        "back_button_link": "/"
+      },
+      "login": {
+        "title": {
+          "es": "Iniciar Sesión",
+          "en": "Login"
+        },
+        "form_action": "/login",
+        "fields": {
+          "username": {
+            "es": "Usuario",
+            "en": "Username"
+          },
+          "password": {
+            "es": "Contraseña",
+            "en": "Password"
+          }
+        },
+        "buttons": {
+          "submit": {
+            "es": "Iniciar Sesión",
+            "en": "Login"
+          },
+          "logout": {
+            "es": "Cerrar Sesión",
+            "en": "Logout"
+          }
+        }
+      },
+      "projects": {
+        "title": {
+          "es": "Proyectos",
+          "en": "Projects"
+        },
+        "carousel": [
+          {
+            "name": {
+              "es": "Proyecto 1",
+              "en": "Project 1"
+            },
+            "description": {
+              "es": "Descripción del proyecto 1",
+              "en": "Description of project 1"
+            },
+            "image": "image1.jpg"
+          },
+          {
+            "name": {
+              "es": "Proyecto 2",
+              "en": "Project 2"
+            },
+            "description": {
+              "es": "Descripción del proyecto 2",
+              "en": "Description of project 2"
+            },
+            "image": "image2.jpg"
+          },
+          {
+            "name": {
+              "es": "Proyecto 3",
+              "en": "Project 3"
+            },
+            "description": {
+              "es": "Descripción del proyecto 3",
+              "en": "Description of project 3"
+            },
+            "image": "image3.jpg"
+          },
+          {
+            "name": {
+              "es": "Proyecto 4",
+              "en": "Project 4"
+            },
+            "description": {
+              "es": "Descripción del proyecto 4",
+              "en": "Description of project 4"
+            },
+            "image": "image4.jpg"
+          },
+          {
+            "name": {
+              "es": "Proyecto 5",
+              "en": "Project 5"
+            },
+            "description": {
+              "es": "Descripción del proyecto 5",
+              "en": "Description of project 5"
+            },
+            "image": "image5.jpg"
+          }
+        ],
+        "carousel_controls": {
+          "prev_button": {
+            "es": "&#8249;",
+            "en": "&#8249;"
+          },
+          "next_button": {
+            "es": "&#8250;",
+            "en": "&#8250;"
+          }
+        }
+      }
+    }
+  }
